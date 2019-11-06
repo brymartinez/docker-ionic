@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  app:
+    container_name: travelapp_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '8102:8100'
+      - '8101:8101' # for debugging - running ionic serve inside the docker container
